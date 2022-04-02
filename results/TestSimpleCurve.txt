@@ -1,0 +1,138 @@
+$ npx hardhat test test/TestSimpleCurve.js > results/TestSimpleCurve.txt
+
+
+  TestSimpleCurve
+        simpleCurve deployment - gasUsed: 1038401
+        + PointsUpdated(terms: 1,2, rates: 10,20)
+        owner: 0xa00Af22D07c87d96EeeB0Ed583f8F6AC7812827E
+        --- Test 1 - Increasing rates ---
+        replacePoints([2,5,10,100], ["20.0","50.0","100.0","1000.0"]) - gasUsed: 148260
+        + PointsUpdated(terms: 2,5,10,100, rates: 20,50,100,1000)
+        pointsLength: 4
+        point(0): term: 2 => rate: 20.0
+        point(1): term: 5 => rate: 50.0
+        point(2): term: 10 => rate: 100.0
+        point(3): term: 100 => rate: 1000.0
+        getRate(term: 1): 20.0, expected: 20.0
+        getRate(term: 2): 20.0, expected: 20.0
+        getRate(term: 3): 30.0, expected: 30.0
+        getRate(term: 5): 50.0, expected: 50.0
+        getRate(term: 7): 70.0, expected: 70.0
+        getRate(term: 10): 100.0, expected: 100.0
+        getRate(term: 100): 1000.0, expected: 1000.0
+        getRate(term: 101): 1000.0, expected: 1000.0
+        getRate(term: 10000): 1000.0, expected: 1000.0
+        --- Test 2 - Decreasing rates ---
+        replacePoints([2,4,6,8,10], ["10.0","8.0","6.0","4.0","2.0"]) - gasUsed: 130725
+        + PointsUpdated(terms: 2,4,6,8,10, rates: 10,8,6,4,2)
+        pointsLength: 5
+        point(0): term: 2 => rate: 10.0
+        point(1): term: 4 => rate: 8.0
+        point(2): term: 6 => rate: 6.0
+        point(3): term: 8 => rate: 4.0
+        point(4): term: 10 => rate: 2.0
+        getRate(term: 1): 10.0, expected: 10.0
+        getRate(term: 2): 10.0, expected: 10.0
+        getRate(term: 3): 9.0, expected: 9.0
+        getRate(term: 4): 8.0, expected: 8.0
+        getRate(term: 5): 7.0, expected: 7.0
+        getRate(term: 6): 6.0, expected: 6.0
+        getRate(term: 7): 5.0, expected: 5.0
+        getRate(term: 8): 4.0, expected: 4.0
+        getRate(term: 9): 3.0, expected: 3.0
+        getRate(term: 10): 2.0, expected: 2.0
+        getRate(term: 11): 2.0, expected: 2.0
+        --- Test 3a - Unixtime and BigNumber ---
+        replacePoints([{"type":"BigNumber","hex":"0x5fa60882"},{"type":"BigNumber","hex":"0x5fa656a2"}], ["1000000.0","2000000.0"]) - gasUsed: 45975
+        + PointsUpdated(terms: 1604716674,1604736674, rates: 1000000000000000000000000,2000000000000000000000000)
+        pointsLength: 2
+        point(0): term: 1604716674 => rate: 1000000.0
+        point(1): term: 1604736674 => rate: 2000000.0
+        getRate(term: 1604716674): 1000000.0, expected: 1000000.0
+        getRate(term: 1604726674): 1500000.0, expected: 1500000.0
+        getRate(term: 1604726675): 1500050.0, expected: 1500050.0
+        getRate(term: 1604726684): 1500500.0, expected: 1500500.0
+        getRate(term: 1604726774): 1505000.0, expected: 1505000.0
+        getRate(term: 1604727674): 1550000.0, expected: 1550000.0
+        --- Test 3b - Replace point ---
+        + PointUpdated(index: 1, term: 1604746674, rate: 3000000000000000000000000)
+        Replaced rate3: 3000000.0 vs expected 3000000.0 - gasUsed: 38920
+        --- Test 4 - Linear from (0, 0) ---
+        replacePoints([0,365], ["0.0","36500.0"]) - gasUsed: 30769
+        + PointsUpdated(terms: 0,365, rates: 0,36500)
+        pointsLength: 2
+        point(0): term: 0 => rate: 0.0
+        point(1): term: 365 => rate: 36500.0
+        getRate(term: 0): 0.0, expected: 0.0
+        getRate(term: 1): 100.0, expected: 100.0
+        getRate(term: 10): 1000.0, expected: 1000.0
+        getRate(term: 100): 10000.0, expected: 10000.0
+        getRate(term: 1000): 36500.0, expected: 36500.0
+        --- Test 5 - Variable rates 1 ---
+        replacePoints([2,5,10,100], ["20.0","500.0","100.0","1000.0"]) - gasUsed: 178272
+        + PointsUpdated(terms: 2,5,10,100, rates: 20,500,100,1000)
+        pointsLength: 4
+        point(0): term: 2 => rate: 20.0
+        point(1): term: 5 => rate: 500.0
+        point(2): term: 10 => rate: 100.0
+        point(3): term: 100 => rate: 1000.0
+        getRate(term: 1): 20.0, expected: 20.0
+        getRate(term: 2): 20.0, expected: 20.0
+        getRate(term: 3): 180.0, expected: 180.0
+        getRate(term: 5): 500.0, expected: 500.0
+        getRate(term: 7): 340.0, expected: 340.0
+        getRate(term: 10): 100.0, expected: 100.0
+        getRate(term: 99): 990.0, expected: 990.0
+        getRate(term: 100): 1000.0, expected: 1000.0
+        getRate(term: 101): 1000.0, expected: 1000.0
+        getRate(term: 10000): 1000.0, expected: 1000.0
+        --- Test 6a - Variable rates 2 ---
+        replacePoints([20,50,100,1000], ["20.0","500.0","100.0","1000.0"]) - gasUsed: 70606
+        + PointsUpdated(terms: 20,50,100,1000, rates: 20,500,100,1000)
+        pointsLength: 4
+        point(0): term: 20 => rate: 20.0
+        point(1): term: 50 => rate: 500.0
+        point(2): term: 100 => rate: 100.0
+        point(3): term: 1000 => rate: 1000.0
+        getRate(term: 10): 20.0, expected: 20.0
+        getRate(term: 20): 20.0, expected: 20.0
+        getRate(term: 30): 180.0, expected: 180.0
+        getRate(term: 50): 500.0, expected: 500.0
+        getRate(term: 70): 340.0, expected: 340.0
+        getRate(term: 100): 100.0, expected: 100.0
+        getRate(term: 990): 990.0, expected: 990.0
+        getRate(term: 999): 999.0, expected: 999.0
+        getRate(term: 1000): 1000.0, expected: 1000.0
+        getRate(term: 1010): 1000.0, expected: 1000.0
+        getRate(term: 100000): 1000.0, expected: 1000.0
+        --- Test 6b - Replace point with errors ---
+        Replace 1st point with term equal to 2nd point - Exception 'Invalid term' thrown as expected
+        Replace 2nd point with term equal to 1st point - Exception 'Invalid term' thrown as expected
+        Replace 2nd point with term greater than 3rd point - Exception 'Invalid term' thrown as expected
+        Replace 3rd/last point with term equal to 2nd point - Exception 'Invalid term' thrown as expected
+        --- Test 7 - Equal rates ---
+        replacePoints([2,5,10,100,200], ["100.0","100.0","200.0","200.0","100.0"]) - gasUsed: 134925
+        + PointsUpdated(terms: 2,5,10,100,200, rates: 100,100,200,200,100)
+        pointsLength: 5
+        point(0): term: 2 => rate: 100.0
+        point(1): term: 5 => rate: 100.0
+        point(2): term: 10 => rate: 200.0
+        point(3): term: 100 => rate: 200.0
+        point(4): term: 200 => rate: 100.0
+        getRate(term: 1): 100.0, expected: 100.0
+        getRate(term: 2): 100.0, expected: 100.0
+        getRate(term: 3): 100.0, expected: 100.0
+        getRate(term: 5): 100.0, expected: 100.0
+        getRate(term: 7): 140.0, expected: 140.0
+        getRate(term: 10): 200.0, expected: 200.0
+        getRate(term: 99): 200.0, expected: 200.0
+        getRate(term: 100): 200.0, expected: 200.0
+        getRate(term: 101): 199.0, expected: 199.0
+        getRate(term: 10000): 100.0, expected: 100.0
+        --- Test Completed ---
+
+    ✓ TestSimpleCurve - #0 (2862ms)
+
+
+  1 passing (3s)
+

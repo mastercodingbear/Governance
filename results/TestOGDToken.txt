@@ -1,0 +1,873 @@
+$ npx hardhat test test/TestOGDToken.js > results/TestOGDToken.txt
+
+
+  TestOGDToken
+    TestOGDToken - Workflow #0
+        Address 0xa00Af22D07c87d96EeeB0Ed583f8F6AC7812827E => Deployer:0xa00A
+        Address 0xa11AAE29840fBb5c86E6fd4cF809EBA183AEf433 => User1:0xa11A
+        Address 0xa22AB8A9D641CE77e06D98b7D7065d324D3d6976 => User2:0xa22A
+        Address 0xa33a6c312D9aD0E0F2E95541BeED0Cc081621fd0 => User3:0xa33a
+        Address 0xa44a08d3F6933c69212114bb66E2Df1813651844 => User4:0xa44a
+        --- Setup 1 - Deploy OGDToken, FEE{0..2} ---
+        Address 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1 => OGDToken:0x1647
+        Address 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72 => Fee0Token:0x0f4e
+        Address 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708 => Fee1Token:0x6eaC
+        Address 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0 => Fee2Token:0xBa1F
+        ogdTokenTx - gasUsed: 2761169, fee: 0.22089352, feeUsd: 85.1920038584, @ 80.0 gwei & 385.67 ETH/USD, 0xa82d438fec1bcba33c98ab7c094e5a08d3c3ebbcafd48d4484cc6d37867618aa
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 0, active: true, maximum: 0, processed: 0)
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 0.0)
+        fee0TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0xfb17e6ad61b5b596a8acd859c4ade364ff17ecae3937cf1d59212f59d1e907ca
+        + Fee0Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 100.0)
+        fee1TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0xf30233521a1c0a2f2c56d24dc337b0a1ae6cc751d384a692d051f656e7bff19c
+        + Fee1Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 1000.0)
+        fee2TokenTx - gasUsed: 776055, fee: 0.0620844, feeUsd: 23.944090548, @ 80.0 gwei & 385.67 ETH/USD, 0xa9d7be402c7ced9889d7807cdf6671246b338349a81d81c8264afbee1e4cf272
+        + Fee2Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -0.4071448                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+         -- ---------------- ------- --------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Setup Completed ---
+
+        --- Test 1 - OGDToken mint(...) permissioning, OGDToken.addDividendTokens for ETH and FEE0 ---
+        setPermission1 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0x86bd5ca4c8e0d5d7d41718cdd89ba4d9f8fe8502a6111510961da24adf82e22e
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 1, active: true, maximum: 0, processed: 0)
+        setPermission2 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0x0738752e281afbcb497677c6c707113fcecc7886cf2d689bb94fdf3fc29d12ee
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 2, active: true, maximum: 0, processed: 0)
+        
+        addDividendToken0 - gasUsed: 115657, fee: 0.00925256, feeUsd: 3.5684348152, @ 80.0 gwei & 385.67 ETH/USD, 0xbf63d16e4aa6d36ac5b5d17c5d3ab61a72f0c7c8197e2d0cd8cf0fbf83574bb7
+        + OGDToken.TokenAdded(token: ETH|null:0x0000, enabled: true)
+        addDividendToken1 - gasUsed: 117624, fee: 0.00940992, feeUsd: 3.6291238464, @ 80.0 gwei & 385.67 ETH/USD, 0x96efa77fe1cf859ed61d2c0943cd05e34c43a5ef1ef67401f254c3264d23c81b
+        + OGDToken.TokenAdded(token: Fee0Token:0x0f4e, enabled: true)
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -0.43889912                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x0f4e    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test 2 - Mint 10,000 OGD tokens for user{1..3}; deployer approve 100 FEE for OGToken to spend ---
+        mint1 - gasUsed: 110303, fee: 0.00882424, feeUsd: 3.4032446408, @ 80.0 gwei & 385.67 ETH/USD, 0xd6e25335ab423562bf1c5675e9918de81c01d6fbf024804c99d94d720002afbf
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User1:0xa11A, tokens: 10000.0)
+        mint2 - gasUsed: 80303, fee: 0.00642424, feeUsd: 2.4776366408, @ 80.0 gwei & 385.67 ETH/USD, 0x5594e374cf94aba88213d35f4c8d1c9bca704b61d87a965e5476863ab57a8b4a
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User2:0xa22A, tokens: 10000.0)
+        mint3 - gasUsed: 80303, fee: 0.00642424, feeUsd: 2.4776366408, @ 80.0 gwei & 385.67 ETH/USD, 0x62cbbb8f957937ab2cedaee4ee81475d93bd04a286eff655fbe1f8fd02d9f554
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User3:0xa33a, tokens: 10000.0)
+        deployerApproveFee0Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0xea4272d8c70f2e20d749f63c597f93817c56a67833e175ff68ea8b175090a051
+        + Fee0Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0x1647, tokens: 100.0)
+        deployerApproveFee1Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0x97a4bbd826a6d92ce000763ff4964f180d31ad6b82a45827c6873535f9a071de
+        + Fee1Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0x1647, tokens: 1000.0)
+        deployerApproveFee2Tokens - gasUsed: 44140, fee: 0.0035312, feeUsd: 1.361877904, @ 80.0 gwei & 385.67 ETH/USD, 0xb9d9e66e10b3d6797ba878efed593d191ab26f38e7d5e0f58de1b6e78383818f
+        + Fee2Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0x1647, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -0.47116352                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  30000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x0f4e    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test 3 - deployer deposits dividends of 100 FEE0 and 10 ETH ---
+        depositDividendFee0 - gasUsed: 79176, fee: 0.00633408, feeUsd: 2.4428646336, @ 80.0 gwei & 385.67 ETH/USD, 0x8cb88c1b9a5ef5c747335f96a24aab6f9a30924730707b732b3d07d5369aa222
+        + Fee0Token.Transfer(from: Deployer:0xa00A, to: OGDToken:0x1647, tokens: 100.0)
+        + OGDToken.DividendDeposited(token: Fee0Token:0x0f4e, tokens: 100.0)
+        depositDividendETH0 - gasUsed: 71680, fee: 0.0057344, feeUsd: 2.211586048, @ 80.0 gwei & 385.67 ETH/USD, 0x49810bf02e77509cb88ea3d5d68878b9580e65f5109196b99f461a15148d7b8b
+        + OGDToken.DividendDeposited(token: ETH|null:0x0000, tokens: 10.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -10.483232                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                                10.0                      0.0                    100.0                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  30000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                       10.0
+          1 Fee0Token:0x0f4e    true                      100.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          2 User2:0xa22A                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          3 User3:0xa33a                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test 4 - user1 cannot transfer to same account (internal stats update) ---
+        Cannot transfer OGTokens - Exception 'Not permissioned' thrown as expected
+        --- Test 5 - user{1..3} withdraw 33.333333333333333333 FEE0 and 3.333333333333333333 ETH ---
+        withdrawDividends1 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0xcbec2a6157ff5ca3108c233ecd1bf267de846802feea62cf774f6ca76b8e7c67
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0x1647, to: User1:0xa11A, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: Fee0Token:0x0f4e, tokens: 33.333333333333333333)
+        withdrawDividends2 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0xee6131b9a8f2029672aa3b8f084b2c58ebb217910a2d27457ba3f8451b7ea73b
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0x1647, to: User2:0xa22A, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: Fee0Token:0x0f4e, tokens: 33.333333333333333333)
+        withdrawDividends3 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0x6829e5bbbe274b7d1bce1ad95e0e83543a0fe5490a8bdf734272d8f3e935c013
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0x1647, to: User3:0xa33a, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: Fee0Token:0x0f4e, tokens: 33.333333333333333333)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -10.483232                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         2 User2:0xa22A                   3.319017573333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         3 User3:0xa33a                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                0.000000000000000001                      0.0     0.000000000000000001                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  30000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true       0.000000000000000001
+          1 Fee0Token:0x0f4e    true       0.000000000000000001
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test 6 - Add Fee{1..2} Dividend Token ---
+        addDividendToken2 - gasUsed: 117624, fee: 0.00940992, feeUsd: 3.6291238464, @ 80.0 gwei & 385.67 ETH/USD, 0xe7ced0055c48be49172f2237f3dfb34bee317638a3624e54be6d51b8c132eae9
+        + OGDToken.TokenAdded(token: Fee1Token:0x6eaC, enabled: true)
+        addDividendToken3 - gasUsed: 117624, fee: 0.00940992, feeUsd: 3.6291238464, @ 80.0 gwei & 385.67 ETH/USD, 0x1090c2d9895b982bedaac599b9b434545b6a9dcd3631434428a612f5adb2fce7
+        + OGDToken.TokenAdded(token: Fee2Token:0xBa1F, enabled: true)
+        --- Test 7 - Mint 10,000 OGD tokens for user4 ---
+        mint4 - gasUsed: 139242, fee: 0.01113936, feeUsd: 4.2961169712, @ 80.0 gwei & 385.67 ETH/USD, 0x7c10ee1f52fea1aa685107a633bc8f709f0d63db7c49c9152abe20b71f12442e
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User4:0xa44a, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -10.5131912                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         2 User2:0xa22A                   3.319017573333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         3 User3:0xa33a                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         5 OGDToken:0x1647                0.000000000000000001                      0.0     0.000000000000000001                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               40000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 40000.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  40000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true       0.000000000000000001
+          1 Fee0Token:0x0f4e    true       0.000000000000000001
+          2 Fee1Token:0x6eaC    true                        0.0
+          3 Fee2Token:0xBa1F    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e   Owing Fee1Token:0x6eaC     New Fee1Token:0x6eaC   Owing Fee2Token:0xBa1F     New Fee2Token:0xBa1F 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test 8 - deployer deposits dividends of 1,000 FEE1 and 10,000 FEE2 ---
+        depositDividendFee1 - gasUsed: 79176, fee: 0.00633408, feeUsd: 2.4428646336, @ 80.0 gwei & 385.67 ETH/USD, 0x4663b7c2095702390ada487734a086dacd6842dbb3626179bb260b144dacaeb1
+        + Fee1Token.Transfer(from: Deployer:0xa00A, to: OGDToken:0x1647, tokens: 1000.0)
+        + OGDToken.DividendDeposited(token: Fee1Token:0x6eaC, tokens: 1000.0)
+        depositDividendFee2 - gasUsed: 79188, fee: 0.00633504, feeUsd: 2.4432348768, @ 80.0 gwei & 385.67 ETH/USD, 0xd35209cc2ba073a3cabbf19317a58d27d9234bf984b7d132f150e299093f6884
+        + Fee2Token.Transfer(from: Deployer:0xa00A, to: OGDToken:0x1647, tokens: 10000.0)
+        + OGDToken.DividendDeposited(token: Fee2Token:0xBa1F, tokens: 10000.0)
+        --- Test 9 - user{1..4} withdraw 250 FEE1 and 2500 FEE2 ---
+        withdrawDividends4 - gasUsed: 212500, fee: 0.017, feeUsd: 6.55639, @ 80.0 gwei & 385.67 ETH/USD, 0x47597c2701d878ed659e15d2f6916cee66ded687bc4e5e59b558c5e95ea12de0
+        + Fee1Token.Transfer(from: OGDToken:0x1647, to: User1:0xa11A, tokens: 250.0)
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: Fee1Token:0x6eaC, tokens: 250.0)
+        + Fee2Token.Transfer(from: OGDToken:0x1647, to: User1:0xa11A, tokens: 2500.0)
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: Fee2Token:0xBa1F, tokens: 2500.0)
+        withdrawDividends5 - gasUsed: 212500, fee: 0.017, feeUsd: 6.55639, @ 80.0 gwei & 385.67 ETH/USD, 0x1202b43f1f8c6378bbba4058c93d90a62e0da764afe656ba48c3dc3a3e2b8766
+        + Fee1Token.Transfer(from: OGDToken:0x1647, to: User2:0xa22A, tokens: 250.0)
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: Fee1Token:0x6eaC, tokens: 250.0)
+        + Fee2Token.Transfer(from: OGDToken:0x1647, to: User2:0xa22A, tokens: 2500.0)
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: Fee2Token:0xBa1F, tokens: 2500.0)
+        withdrawDividends6 - gasUsed: 212500, fee: 0.017, feeUsd: 6.55639, @ 80.0 gwei & 385.67 ETH/USD, 0x5d3f696a0e18423733ac57fa04e0960729991cc064c55a60525428ccd92f0d0a
+        + Fee1Token.Transfer(from: OGDToken:0x1647, to: User3:0xa33a, tokens: 250.0)
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: Fee1Token:0x6eaC, tokens: 250.0)
+        + Fee2Token.Transfer(from: OGDToken:0x1647, to: User3:0xa33a, tokens: 2500.0)
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: Fee2Token:0xBa1F, tokens: 2500.0)
+        withdrawDividends7 - gasUsed: 152500, fee: 0.0122, feeUsd: 4.705174, @ 80.0 gwei & 385.67 ETH/USD, 0xe86e2a920769c77f9c5fa4fa0d997b3efee1044c41c996a2fc32cfefd3055727
+        + Fee1Token.Transfer(from: OGDToken:0x1647, to: User4:0xa44a, tokens: 250.0)
+        + OGDToken.DividendWithdrawn(account: User4:0xa44a, destination: User4:0xa44a, token: Fee1Token:0x6eaC, tokens: 250.0)
+        + Fee2Token.Transfer(from: OGDToken:0x1647, to: User4:0xa44a, tokens: 2500.0)
+        + OGDToken.DividendWithdrawn(account: User4:0xa44a, destination: User4:0xa44a, token: Fee2Token:0xBa1F, tokens: 2500.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                        -10.52586032                      0.0                      0.0                      0.0                      0.0
+         1 User1:0xa11A                   3.303881973333333333                  10000.0    33.333333333333333333                    250.0                   2500.0
+         2 User2:0xa22A                   3.302017573333333333                  10000.0    33.333333333333333333                    250.0                   2500.0
+         3 User3:0xa33a                   3.303881973333333333                  10000.0    33.333333333333333333                    250.0                   2500.0
+         4 User4:0xa44a                                -0.0122                  10000.0                      0.0                    250.0                   2500.0
+         5 OGDToken:0x1647                0.000000000000000001                      0.0     0.000000000000000001                      0.0                      0.0
+         6 Fee0Token:0x0f4e                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0x6eaC                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xBa1F                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               40000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 40000.0, owner: n/a, address: OGDToken:0x1647 @ 0x1647B1461251A0c6D3E14a227dE0F16E36ba80B1
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  40000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true       0.000000000000000001
+          1 Fee0Token:0x0f4e    true       0.000000000000000001
+          2 Fee1Token:0x6eaC    true                        0.0
+          3 Fee2Token:0xBa1F    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0f4e     New Fee0Token:0x0f4e   Owing Fee1Token:0x6eaC     New Fee1Token:0x6eaC   Owing Fee2Token:0xBa1F     New Fee2Token:0xBa1F 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0f4e @ 0x0f4eA6f2be49d822b7cAEf4175450A4D83A32e72
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0x6eaC @ 0x6eaC8DFBdEB9588C9FEEe24783B4137b082f9708
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xBa1F @ 0xBa1FCDaE835E77cAB2a76a7C3884AdC630f7a5B0
+        
+        --- Test Completed ---
+
+      ✓ Workflow #0 (4574ms)
+    TestOGDToken - Workflow #1 - Transfer Test
+        Address 0xa00Af22D07c87d96EeeB0Ed583f8F6AC7812827E => Deployer:0xa00A
+        Address 0xa11AAE29840fBb5c86E6fd4cF809EBA183AEf433 => User1:0xa11A
+        Address 0xa22AB8A9D641CE77e06D98b7D7065d324D3d6976 => User2:0xa22A
+        Address 0xa33a6c312D9aD0E0F2E95541BeED0Cc081621fd0 => User3:0xa33a
+        Address 0xa44a08d3F6933c69212114bb66E2Df1813651844 => User4:0xa44a
+        --- Setup 1 - Deploy OGDToken, FEE{0..2} ---
+        Address 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b => OGDToken:0xee9a
+        Address 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0 => Fee0Token:0x0b70
+        Address 0xA92f39B1123B4051a6Ef6736879F85249AB45845 => Fee1Token:0xA92f
+        Address 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5 => Fee2Token:0xb5EB
+        ogdTokenTx - gasUsed: 2761169, fee: 0.22089352, feeUsd: 85.1920038584, @ 80.0 gwei & 385.67 ETH/USD, 0x00e84caf2c77e2b3a2307b004a4b39364c5f6f9b5988e687cdb6f2dd568da249
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 0, active: true, maximum: 0, processed: 0)
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 0.0)
+        fee0TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0x9d66baa04309ff270bd3643b80364781b9d1e7ee3a119cae512579723b412677
+        + Fee0Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 100.0)
+        fee1TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0x72bf4d69b38dce5ee76b03f152f2dcefa6e7a10c0c45ddc274e8915a049232dd
+        + Fee1Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 1000.0)
+        fee2TokenTx - gasUsed: 776055, fee: 0.0620844, feeUsd: 23.944090548, @ 80.0 gwei & 385.67 ETH/USD, 0x667898f804a241f1a17f463269ee73eae541ef2bc27823e51c0a8496ee6f668f
+        + Fee2Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -0.4071448                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xee9a                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0b70                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xA92f                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xb5EB                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0xee9a @ 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+         -- ---------------- ------- --------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0b70 @ 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xA92f @ 0xA92f39B1123B4051a6Ef6736879F85249AB45845
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xb5EB @ 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5
+        
+        --- Setup Completed ---
+
+        --- Test 1 - OGDToken mint(...) permissioning, OGDToken.addDividendTokens for ETH and FEE0 ---
+        setPermission1 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0xc4101e9a87a9f54595bd948bb390a0a071237c349f6fb229fd7daa342866a2aa
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 1, active: true, maximum: 0, processed: 0)
+        setPermission2 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0xaf658aa9c95f7e92d6f690abda1bc6d01e58c953d1a4aff19d4c0a0332a00884
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 2, active: true, maximum: 0, processed: 0)
+        
+        addDividendToken0 - gasUsed: 115657, fee: 0.00925256, feeUsd: 3.5684348152, @ 80.0 gwei & 385.67 ETH/USD, 0xc9a7a2335b0089a4f3b83071ccbced661fb8e6d4ad53241a5d9c35bdf847d01d
+        + OGDToken.TokenAdded(token: ETH|null:0x0000, enabled: true)
+        addDividendToken1 - gasUsed: 117624, fee: 0.00940992, feeUsd: 3.6291238464, @ 80.0 gwei & 385.67 ETH/USD, 0xdb5dd7a2de087e58974fbc7acdbb1dca7e9e558fb25c0c3c13178f1d18d758ab
+        + OGDToken.TokenAdded(token: Fee0Token:0x0b70, enabled: true)
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -0.43889912                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xee9a                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0b70                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xA92f                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xb5EB                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0xee9a @ 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x0b70    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0b70     New Fee0Token:0x0b70 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0b70 @ 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xA92f @ 0xA92f39B1123B4051a6Ef6736879F85249AB45845
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xb5EB @ 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5
+        
+        --- Test 2 - Mint 10,000 OGD tokens for user{1,2}; deployer approve 100 FEE for OGToken to spend ---
+        mint1 - gasUsed: 110303, fee: 0.00882424, feeUsd: 3.4032446408, @ 80.0 gwei & 385.67 ETH/USD, 0xafdc410adf34aafa5b2b0197296d18ba8df4f3d1f9976f96e07582bb8f1a6217
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User1:0xa11A, tokens: 10000.0)
+        mint2 - gasUsed: 80303, fee: 0.00642424, feeUsd: 2.4776366408, @ 80.0 gwei & 385.67 ETH/USD, 0x54c766771aa30747018c45b96620ac69b118fe43aeb4335f6104e0d23ebf9ff1
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User2:0xa22A, tokens: 10000.0)
+        deployerApproveFee0Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0xa102ddb730a35b02d2db59ec23548eebc80537516920771c8ae7ca1df1742786
+        + Fee0Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xee9a, tokens: 100.0)
+        deployerApproveFee1Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0x243660def4de298a0b58a263542aa2f9b1a991fadec47d9ecd2015bd2cad00ff
+        + Fee1Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xee9a, tokens: 1000.0)
+        deployerApproveFee2Tokens - gasUsed: 44140, fee: 0.0035312, feeUsd: 1.361877904, @ 80.0 gwei & 385.67 ETH/USD, 0xec8c7035360e266498a37b4ebac935f28cd9ea15724e0a562b88fddca641debb
+        + Fee2Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xee9a, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -0.46473928                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xee9a                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0b70                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xA92f                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xb5EB                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               20000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 20000.0, owner: n/a, address: OGDToken:0xee9a @ 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  20000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x0b70    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0b70     New Fee0Token:0x0b70 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0b70 @ 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xA92f @ 0xA92f39B1123B4051a6Ef6736879F85249AB45845
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xb5EB @ 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5
+        
+        --- Test 3 - deployer deposits dividends of 100 FEE0 and 10 ETH ---
+        depositDividendFee0 - gasUsed: 79176, fee: 0.00633408, feeUsd: 2.4428646336, @ 80.0 gwei & 385.67 ETH/USD, 0xc1827a16ef14d27355caaec1469b44a28ec575031c4c3542759710b1c3b78ed1
+        + Fee0Token.Transfer(from: Deployer:0xa00A, to: OGDToken:0xee9a, tokens: 100.0)
+        + OGDToken.DividendDeposited(token: Fee0Token:0x0b70, tokens: 100.0)
+        depositDividendETH0 - gasUsed: 71680, fee: 0.0057344, feeUsd: 2.211586048, @ 80.0 gwei & 385.67 ETH/USD, 0xc56950e20f5ca125c8e2d899d1c5cbd859195021ae44dfbd1a719308aadc2087
+        + OGDToken.DividendDeposited(token: ETH|null:0x0000, tokens: 10.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                        -10.47680776                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xee9a                                10.0                      0.0                    100.0                      0.0                      0.0
+         6 Fee0Token:0x0b70                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xA92f                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xb5EB                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               20000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 20000.0, owner: n/a, address: OGDToken:0xee9a @ 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  20000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                       10.0
+          1 Fee0Token:0x0b70    true                      100.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0b70     New Fee0Token:0x0b70 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      5.0                      0.0                     50.0 
+          2 User2:0xa22A                            0.0                      5.0                      0.0                     50.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0b70 @ 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xA92f @ 0xA92f39B1123B4051a6Ef6736879F85249AB45845
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xb5EB @ 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5
+        
+        --- Test 4 - user2 cannot transfer all tokens to user3 ---
+        Cannot transfer OGTokens - Exception 'Not permissioned' thrown as expected
+        --- Test 5 - user{1..3} withdraw FEE0 ---
+        withdrawDividends1 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0x835921093303362aa7b8e914d5bab82b4c9e87896de0f9887acfa74bc649ba7d
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: ETH|null:0x0000, tokens: 5.0)
+        + Fee0Token.Transfer(from: OGDToken:0xee9a, to: User1:0xa11A, tokens: 50.0)
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: Fee0Token:0x0b70, tokens: 50.0)
+        withdrawDividends2 - gasUsed: 110642, fee: 0.00885136, feeUsd: 3.4137040112, @ 80.0 gwei & 385.67 ETH/USD, 0xa3af76e535985d4b81a82b2d64911cddfbd01cd158959432e8f252d719dfb879
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: ETH|null:0x0000, tokens: 5.0)
+        + Fee0Token.Transfer(from: OGDToken:0xee9a, to: User2:0xa22A, tokens: 50.0)
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: Fee0Token:0x0b70, tokens: 50.0)
+        withdrawDividends3 - gasUsed: 94593, fee: 0.00756744, feeUsd: 2.9185345848, @ 80.0 gwei & 385.67 ETH/USD, 0x771093d1399566b59dbfa47f2f57af12b150814c07ee29a9a03045d652831edd
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                        -10.47680776                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                             4.98754864                  10000.0                     50.0                      0.0                      0.0
+         2 User2:0xa22A                             4.98927752                  10000.0                     50.0                      0.0                      0.0
+         3 User3:0xa33a                            -0.00756744                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xee9a                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x0b70                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xA92f                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0xb5EB                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               20000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 20000.0, owner: n/a, address: OGDToken:0xee9a @ 0xee9a0dAE3e21Fe8b9B9E2E13E693F41E0aB3f42b
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  20000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x0b70    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x0b70     New Fee0Token:0x0b70 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x0b70 @ 0x0b70A80b0336777A1697A5b505A6F1f3cC1087A0
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xA92f @ 0xA92f39B1123B4051a6Ef6736879F85249AB45845
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0xb5EB @ 0xb5EBF7c369B492493e17032CA29E41c0496EcbE5
+        
+      ✓ Workflow #1 - Transfer Test (2497ms)
+    TestOGDToken - Workflow #2 - address(0) with balance
+        Address 0xa00Af22D07c87d96EeeB0Ed583f8F6AC7812827E => Deployer:0xa00A
+        Address 0xa11AAE29840fBb5c86E6fd4cF809EBA183AEf433 => User1:0xa11A
+        Address 0xa22AB8A9D641CE77e06D98b7D7065d324D3d6976 => User2:0xa22A
+        Address 0xa33a6c312D9aD0E0F2E95541BeED0Cc081621fd0 => User3:0xa33a
+        Address 0xa44a08d3F6933c69212114bb66E2Df1813651844 => User4:0xa44a
+        --- Setup 1 - Deploy OGDToken, FEE{0..2} ---
+        Address 0xF39360dB9BF6A2555233509B638b408D838caa9e => OGDToken:0xF393
+        Address 0x103f080fe5981A6C1651F87717806921e0000805 => Fee0Token:0x103f
+        Address 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8 => Fee1Token:0xaa25
+        Address 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9 => Fee2Token:0x2787
+        ogdTokenTx - gasUsed: 2761169, fee: 0.22089352, feeUsd: 85.1920038584, @ 80.0 gwei & 385.67 ETH/USD, 0xfd729df1bd80ae5a6893652a7b6185ec8976d2c9de21418797948a992463a5b6
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 0, active: true, maximum: 0, processed: 0)
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 0.0)
+        fee0TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0x6f0bfc27c12f923e6133ac21d8cc42e63a62bf6f3579736c8eb6cce488682ead
+        + Fee0Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 100.0)
+        fee1TokenTx - gasUsed: 776043, fee: 0.06208344, feeUsd: 23.9437203048, @ 80.0 gwei & 385.67 ETH/USD, 0xb4e8ac683be54afafc30e22105ed91f6a9f2f376e87d2bd998db3e836555f361
+        + Fee1Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 1000.0)
+        fee2TokenTx - gasUsed: 776055, fee: 0.0620844, feeUsd: 23.944090548, @ 80.0 gwei & 385.67 ETH/USD, 0x04a6a9cdc91dddaf9df5006d060b9fc8525f8b85cd7486bad1b122211a367646
+        + Fee2Token.Transfer(from: ETH|null:0x0000, to: Deployer:0xa00A, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -0.4071448                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xF393                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x103f                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xaa25                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0x2787                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0xF393 @ 0xF39360dB9BF6A2555233509B638b408D838caa9e
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+         -- ---------------- ------- --------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x103f @ 0x103f080fe5981A6C1651F87717806921e0000805
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xaa25 @ 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0x2787 @ 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9
+        
+        --- Setup Completed ---
+
+        --- Test 1 - OGDToken mint(...) permissioning, OGDToken.addDividendTokens for ETH and FEE0 ---
+        setPermission1 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0x226841e28581e70a5a2e545a94d1782ff1acc238fed56e1e13c972a4397456a8
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 1, active: true, maximum: 0, processed: 0)
+        setPermission2 - gasUsed: 81824, fee: 0.00654592, feeUsd: 2.5245649664, @ 80.0 gwei & 385.67 ETH/USD, 0x7f641ec4dbd43c7237f1b78a66917abb50dfb3e8ba3937314a4508caf28a5809
+        + OGDToken.PermissionUpdated(account: Deployer:0xa00A, role: 2, active: true, maximum: 0, processed: 0)
+        
+        addDividendToken0 - gasUsed: 115657, fee: 0.00925256, feeUsd: 3.5684348152, @ 80.0 gwei & 385.67 ETH/USD, 0xf45cf03a73aea001d107f6c9356c418dddd7d99b4dea221a4fd1d16dd533e107
+        + OGDToken.TokenAdded(token: ETH|null:0x0000, enabled: true)
+        addDividendToken1 - gasUsed: 117612, fee: 0.00940896, feeUsd: 3.6287536032, @ 80.0 gwei & 385.67 ETH/USD, 0x671fc2dbd02d8e571ce7aca8d8a209c6e5abe95a79130fe5340d548a1f8d47a6
+        + OGDToken.TokenAdded(token: Fee0Token:0x103f, enabled: true)
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                         -0.43889816                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                      0.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xF393                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x103f                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xaa25                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0x2787                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                                   0.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 0.0, owner: n/a, address: OGDToken:0xF393 @ 0xF39360dB9BF6A2555233509B638b408D838caa9e
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                      0.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x103f    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x103f     New Fee0Token:0x103f 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x103f @ 0x103f080fe5981A6C1651F87717806921e0000805
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xaa25 @ 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0x2787 @ 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9
+        
+        --- Test 2 - Mint 10,000 OGD tokens for user{1,2,3} and address(0); deployer approve 100 FEE for OGToken to spend ---
+        mint1 - gasUsed: 110303, fee: 0.00882424, feeUsd: 3.4032446408, @ 80.0 gwei & 385.67 ETH/USD, 0x57f5e021ecb00a8d778b890cbb6f9da296bb016bdf58e7876a9d861f06238792
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User1:0xa11A, tokens: 10000.0)
+        mint2 - gasUsed: 80303, fee: 0.00642424, feeUsd: 2.4776366408, @ 80.0 gwei & 385.67 ETH/USD, 0x73d9b64900383f9ff7bca02260fdf29ebf37aa53f7efb4c783f9ce19be39e57a
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User2:0xa22A, tokens: 10000.0)
+        mint3 - gasUsed: 80303, fee: 0.00642424, feeUsd: 2.4776366408, @ 80.0 gwei & 385.67 ETH/USD, 0x3e260fd8b6bd1ca4d293e734d7fc3d5273c09743bddf8471271f10d15be8ce81
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: User3:0xa33a, tokens: 10000.0)
+        mint4 - gasUsed: 80063, fee: 0.00640504, feeUsd: 2.4702317768, @ 80.0 gwei & 385.67 ETH/USD, 0xf13055aeb87294f9c482f2cc62208b7913b43572e972a2e83e20fd0cdc3d5133
+        + OGDToken.Transfer(from: ETH|null:0x0000, to: ETH|null:0x0000, tokens: 10000.0)
+        deployerApproveFee0Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0xacfa05e15b4c3a91c51f54035ad21546ba650c5ef92917f19dca1b082f7e8eb7
+        + Fee0Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xF393, tokens: 100.0)
+        deployerApproveFee1Tokens - gasUsed: 44128, fee: 0.00353024, feeUsd: 1.3615076608, @ 80.0 gwei & 385.67 ETH/USD, 0xa5e03a6447bbc82fa85ff57937c4c888f3a25710982fc6381b516c78a780562e
+        + Fee1Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xF393, tokens: 1000.0)
+        deployerApproveFee2Tokens - gasUsed: 44140, fee: 0.0035312, feeUsd: 1.361877904, @ 80.0 gwei & 385.67 ETH/USD, 0xdddd6f58f48e19975e44e1f1192cb7977146af98746ed9cf82cfa45be53841d0
+        + Fee2Token.Approval(tokenOwner: Deployer:0xa00A, spender: OGDToken:0xF393, tokens: 10000.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                          -0.4775676                      0.0                    100.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xF393                                 0.0                      0.0                      0.0                      0.0                      0.0
+         6 Fee0Token:0x103f                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xaa25                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0x2787                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0xF393 @ 0xF39360dB9BF6A2555233509B638b408D838caa9e
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  40000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                        0.0
+          1 Fee0Token:0x103f    true                        0.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x103f     New Fee0Token:0x103f 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x103f @ 0x103f080fe5981A6C1651F87717806921e0000805
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xaa25 @ 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0x2787 @ 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9
+        
+        --- Test 3 - deployer deposits dividends of 100 FEE0 and 10 ETH ---
+        depositDividendFee0 - gasUsed: 79164, fee: 0.00633312, feeUsd: 2.4424943904, @ 80.0 gwei & 385.67 ETH/USD, 0xe429bac58583a847985a39cef78cf538f9fb23d420cd564a1c732df643c68d1a
+        + Fee0Token.Transfer(from: Deployer:0xa00A, to: OGDToken:0xF393, tokens: 100.0)
+        + OGDToken.DividendDeposited(token: Fee0Token:0x103f, tokens: 100.0)
+        depositDividendETH0 - gasUsed: 71680, fee: 0.0057344, feeUsd: 2.211586048, @ 80.0 gwei & 385.67 ETH/USD, 0xbd98d3e9a473831f7a5fe0372509b4ec5b214e6faf62bc8a7811919e6d2ec830
+        + OGDToken.DividendDeposited(token: ETH|null:0x0000, tokens: 10.0)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                        -10.48963512                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         2 User2:0xa22A                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         3 User3:0xa33a                                    0.0                  10000.0                      0.0                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xF393                                10.0                      0.0                    100.0                      0.0                      0.0
+         6 Fee0Token:0x103f                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xaa25                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0x2787                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0xF393 @ 0xF39360dB9BF6A2555233509B638b408D838caa9e
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  40000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true                       10.0
+          1 Fee0Token:0x103f    true                      100.0
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x103f     New Fee0Token:0x103f 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          2 User2:0xa22A                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          3 User3:0xa33a                            0.0     3.333333333333333333                      0.0    33.333333333333333333 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x103f @ 0x103f080fe5981A6C1651F87717806921e0000805
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xaa25 @ 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0x2787 @ 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9
+        
+        --- Test 4 - user{1..3} withdraw FEE0 ---
+        withdrawDividends1 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0x19bd5d3eacaac93c64fba49d0c71925c2b6485e5474750645395052025a9e59c
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0xF393, to: User1:0xa11A, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User1:0xa11A, destination: User1:0xa11A, token: Fee0Token:0x103f, tokens: 33.333333333333333333)
+        withdrawDividends2 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0x240470329ad411d8ecba665d438e4ce73b6baafedd25d6bcdbb7b1bcd9ae54bf
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0xF393, to: User2:0xa22A, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User2:0xa22A, destination: User2:0xa22A, token: Fee0Token:0x103f, tokens: 33.333333333333333333)
+        withdrawDividends3 - gasUsed: 155642, fee: 0.01245136, feeUsd: 4.8021160112, @ 80.0 gwei & 385.67 ETH/USD, 0xd41dbee5f233b31631d5e1833ef7f4e9320b4cb9bbab117f08f72110814e0fbf
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: ETH|null:0x0000, tokens: 3.333333333333333333)
+        + Fee0Token.Transfer(from: OGDToken:0xF393, to: User3:0xa33a, tokens: 33.333333333333333333)
+        + OGDToken.DividendWithdrawn(account: User3:0xa33a, destination: User3:0xa33a, token: Fee0Token:0x103f, tokens: 33.333333333333333333)
+        
+         # Account                                        ΔETH                      OGD                     FEE0                     FEE1                     FEE2
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+         0 Deployer:0xa00A                        -10.48963512                      0.0                      0.0                   1000.0                  10000.0
+         1 User1:0xa11A                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         2 User2:0xa22A                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         3 User3:0xa33a                   3.320881973333333333                  10000.0    33.333333333333333333                      0.0                      0.0
+         4 User4:0xa44a                                    0.0                      0.0                      0.0                      0.0                      0.0
+         5 OGDToken:0xF393                0.000000000000000001                      0.0     0.000000000000000001                      0.0                      0.0
+         6 Fee0Token:0x103f                                0.0                      0.0                      0.0                      0.0                      0.0
+         7 Fee1Token:0xaa25                                0.0                      0.0                      0.0                      0.0                      0.0
+         8 Fee2Token:0x2787                                0.0                      0.0                      0.0                      0.0                      0.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+           Totals                                                               30000.0                    100.0                   1000.0                  10000.0
+        -- --------------------------- ----------------------- ------------------------ ------------------------ ------------------------ ------------------------
+        
+        Token 0 symbol: 'OGD', name: 'Optino Governance Dividend', decimals: 18, totalSupply: 30000.0, owner: n/a, address: OGDToken:0xF393 @ 0xF39360dB9BF6A2555233509B638b408D838caa9e
+          # Permissioned account     Role            Active                  Maximum                Processed
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          0 Deployer:0xa00A          Set Permission  Yes                         0.0                      0.0
+          1 Deployer:0xa00A          Set Config      Yes                         0.0                      0.0
+          2 Deployer:0xa00A          Mint Tokens     Yes                         0.0                  40000.0
+         -- ------------------------ --------------- ------ ------------------------ ------------------------
+          # Dividend         Enabled                  Unclaimed
+         -- ---------------- ------- --------------------------
+          0 ETH|null:0x0000     true       0.000000000000000001
+          1 Fee0Token:0x103f    true       0.000000000000000001
+         -- ---------------- ------- --------------------------
+          # Account               Owing ETH|null:0x0000      New ETH|null:0x0000   Owing Fee0Token:0x103f     New Fee0Token:0x103f 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+          1 User1:0xa11A                            0.0                      0.0                      0.0                      0.0 
+          2 User2:0xa22A                            0.0                      0.0                      0.0                      0.0 
+          3 User3:0xa33a                            0.0                      0.0                      0.0                      0.0 
+          4 User4:0xa44a                            0.0                      0.0                      0.0                      0.0 
+         -- ------------------ ------------------------ ------------------------ ------------------------ ------------------------
+        Token 1 symbol: 'FEE0', name: 'Fee0', decimals: 18, totalSupply: 100.0, owner: Deployer:0xa00A, address: Fee0Token:0x103f @ 0x103f080fe5981A6C1651F87717806921e0000805
+        Token 2 symbol: 'FEE1', name: 'Fee1', decimals: 18, totalSupply: 1000.0, owner: Deployer:0xa00A, address: Fee1Token:0xaa25 @ 0xaa2549768781Bc188ed636287d25aaBb73A2E3D8
+        Token 3 symbol: 'FEE2', name: 'Fee2', decimals: 18, totalSupply: 10000.0, owner: Deployer:0xa00A, address: Fee2Token:0x2787 @ 0x2787C8cBC9B5D4A3b49dba8b2d31376616933Ca9
+        
+      ✓ Workflow #2 - address(0) with balance (2394ms)
+
+
+  3 passing (14s)
+
